@@ -10,7 +10,8 @@ namespace LettersCount
             int sum = 0;
             for (int i = 0; i < str.Length; i++)
             {
-                sum += 1;
+                if (str[i] == 'a')
+                    sum += 1;
             }
 
             Console.WriteLine(sum);
