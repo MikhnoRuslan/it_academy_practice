@@ -6,10 +6,9 @@ namespace GoodDay
     {
         static void Main(string[] args)
         {
-            DateTime dateTime = new DateTime();
             Console.WriteLine(DateTime.Now.TimeOfDay);
             Greeting greeting = new Greeting();
-            greeting.Print(dateTime);
+            greeting.Print();
         }
     }
 
@@ -23,13 +22,14 @@ namespace GoodDay
 
     class Greeting
     {
-        internal void Print(DateTime dateTime)
+        internal void Print()
         {
-            if (dateTime.Hour > Constants.Morning && dateTime.Hour < 12)
+            TimeSpan time = DateTime.Now.TimeOfDay;
+            if (time.Hours > Constants.Morning && time.Hours < Constants.Evening)
                 Console.WriteLine($"Good morning, guys");
-            else if (dateTime.Hour > Constants.Day && dateTime.Hour < Constants.Evening)
+            else if (time.Hours > Constants.Day && time.Hours < Constants.Evening)
                 Console.WriteLine($"Good day, guys");
-            else if (dateTime.Hour > Constants.Evening && dateTime.Hour < Constants.Night)
+            else if (time.Hours > Constants.Evening && time.Hours < Constants.Night)
                 Console.WriteLine($"Good evening, guys");
             else
                 Console.WriteLine($"Good night, guys");
