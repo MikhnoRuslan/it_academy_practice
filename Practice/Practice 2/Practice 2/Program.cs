@@ -31,6 +31,30 @@ namespace Practice_2
             int sumForFirstValue = 10;
             string sumForThirdValue = ", guys!";
         }
+
+        static void Task3()
+        {
+            int rez = 0;
+            int[] myArray = new int[13];
+            Random random = new Random();
+            for (int i = 0; i < myArray.Length; i++)
+            {
+                myArray[i] = random.Next(1, 100);
+            }
+
+            for (int i = 0; i < myArray.Length; i++)
+            {
+                Console.WriteLine(myArray[i] + " ");
+            }
+
+            for (int i = 0; i < myArray.Length; i++)
+            {
+                if (myArray[i] > rez)
+                    rez = myArray[i];
+            }
+
+            Console.WriteLine($"Max = {rez}");
+        }
     }
 }
   
