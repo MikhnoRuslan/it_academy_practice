@@ -7,6 +7,7 @@ namespace Practice_2
         static void Main(string[] args)
         {
             Tack2MixedArray();
+            Task3();
         }
 
         static void Tack1EmptyArray()
@@ -30,6 +31,21 @@ namespace Practice_2
 
             int sumForFirstValue = 10;
             string sumForThirdValue = ", guys!";
+
+            for (int i = 0; i < mixedArray.Length; i++)
+            {
+                if (i == 0)
+                {
+                    mixedArray[i] = (int) mixedArray[i] + sumForFirstValue;
+                }
+
+                if (i == 2)
+                {
+                    mixedArray[i] = (string) mixedArray[i] + sumForThirdValue;
+                }
+
+                Console.WriteLine(mixedArray[i] + " ");
+            }
         }
 
         static void Task3()
@@ -57,4 +73,3 @@ namespace Practice_2
         }
     }
 }
-  
