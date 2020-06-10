@@ -8,6 +8,8 @@ namespace Practice_2
         {
             Tack2MixedArray();
             Task3();
+            Console.WriteLine();
+            Task4();
         }
 
         static void Tack1EmptyArray()
@@ -70,6 +72,15 @@ namespace Practice_2
             }
 
             Console.WriteLine($"Max = {rez}");
+        }
+
+        static void Task4()
+        {
+            short firstValue = 5;
+            Object obj = firstValue;
+            obj = (sbyte) firstValue;
+            sbyte secondValue = (sbyte)obj;
+            Console.WriteLine($"{obj} {secondValue.GetType()}");
         }
     }
 }
