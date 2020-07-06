@@ -1,22 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Channels;
 
 namespace Identifier
 {
     class UniqueItem
     {
-        static int _id = 0;
+        public static int Id { get; set; } = 0;
 
-        public static int Id
+        public UniqueItem(int id)
         {
-            get => _id;
-            set => _id = value;
+            Id = id;
+            Id++;
+            PrintId();
         }
 
-        static UniqueItem()
+        private static void PrintId()
         {
-            _id++;
+            Console.WriteLine(GetId());
+        }
+
+        private static string GetId()
+        {
+            return $"{Id}";
         }
     }
 }
